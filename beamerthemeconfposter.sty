@@ -10,14 +10,17 @@
 \ProvidesPackage{beamerthemeconfposter}
 \RequirePackage{tikz}		% for drawing the nice rounded boxes
 \usetikzlibrary{arrows,backgrounds}
-\RequirePackage[T1]{fontenc}
-\RequirePackage{lmodern}
+
+\RequirePackage{fontspec}
 \RequirePackage{textcomp}
 \RequirePackage{amsmath,amssymb}
-\usefonttheme{professionalfonts}
 \newcommand{\makeruleinbox}{{\usebeamercolor[bg]{block alerted title}\centering\hspace*{-0.7cm}\rule{\inboxrule}{0.5cm}}}
 \usepackage{ragged2e}
 
+
+\setmainfont{Fira Sans}
+\setsansfont{Fira Sans}
+\setmonofont{Fira Code}
 %-----------------------------------------------------------
 % Define a whole bunch of custom colours and fonts
 %-----------------------------------------------------------
@@ -109,7 +112,10 @@
 \definecolor{Brown}             {RGB}{134, 67, 30}      % Brown  Approximate PANTONE 1615
 \definecolor{Tan}               {RGB}{210, 180, 140}	% Tan  No PANTONE match
 \definecolor{Gray}              {RGB}{139, 141, 142} 	% Gray  Approximate PANTONE COOL-GRAY-8
-
+\definecolor{DarkGray}              {RGB}{80, 80, 80}
+\definecolor{DarkGray100}              {RGB}{100, 100, 100}
+\definecolor{LightGray}              {RGB}{200,200,200}
+\definecolor{LighterGray}              {RGB}{230,230,230} 
 \definecolor{Black}		  	    {RGB}{30, 30, 30}       % Black  Approximate PANTONE PROCESS-BLACK
 \definecolor{White}		  	    {RGB}{255, 255, 255}    % White  No PANTONE match
 
@@ -135,7 +141,7 @@
 \setbeamercolor{palette quaternary}{fg=black,bg=white}
 \setbeamercolor{structure}{fg=jblue}
 \setbeamercolor{titlelike}         {bg=jblue,fg=white}
-\setbeamercolor{frametitle}        {bg=jblue!10,fg=jblue}
+\setbeamercolor{frametitle}        {bg=jblue!10,fg=DarkGray}
 \setbeamercolor{cboxb}{fg=black,bg=jblue}
 \setbeamercolor{cboxr}{fg=black,bg=red}
 
@@ -188,9 +194,9 @@
    \begin{column}{\linewidth}
     \vskip1cm
     \centering
-    \usebeamercolor{title in headline}{\color{jblue}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
-    \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
-    \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+    \usebeamercolor{title in headline}{\color{DarkGray}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
+    \usebeamercolor{author in headline}{\color{DarkGray100}\Large{\insertauthor}\\[1ex]}
+    \usebeamercolor{institute in headline}{\color{DarkGray100}\large{\insertinstitute}\\[1ex]}
     \vskip1cm
    \end{column}
    \vspace{1cm}
@@ -207,13 +213,13 @@
   \begin{beamercolorbox}[colsep*=0ex,dp={2ex},center]{block title}
     \vskip-0.25cm
     \usebeamerfont{block title}\large\insertblocktitle
-    \begin{flushleft}
-    \vskip-1cm
-    \begin{tikzpicture}[remember picture,overlay]
-      \shade [inner color=gray,outer color=white]
-      (0,0) rectangle (\textwidth,0.3cm);
-    \end{tikzpicture}
-    \end{flushleft}
+    %\begin{flushleft}
+    %\vskip-1cm
+    %\begin{tikzpicture}[remember picture,overlay]
+    %  \shade [inner color=gray,outer color=white]
+    %  (0,0) rectangle (\textwidth,0.3cm);
+    %\end{tikzpicture}
+    %\end{flushleft}
   \end{beamercolorbox}
   {\parskip0pt\par}
   \ifbeamercolorempty[bg]{block title}
@@ -235,7 +241,7 @@
 \setbeamertemplate{block alerted begin}
 {
   \par\vskip\medskipamount
-  \begin{beamercolorbox}[sep=0ex,rounded=true,center,dp={2ex}]{block alerted title}
+  \begin{beamercolorbox}[sep=0ex,rounded=true,center,dp={1ex}]{block alerted title}
     \vskip0.01cm
     \usebeamerfont{block title}\large\insertblocktitle
   \end{beamercolorbox}

@@ -1,28 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Multiplicative domain poster
-% Created by Nathaniel Johnston
-% August 2009
+% This poster uses a theme taken from Nathaniel Johnston
 % http://www.nathanieljohnston.com/2009/08/latex-poster-template/
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[final]{beamer}
-\usepackage{fontspec}
-\usepackage[scale=1]{beamerposter}
-\usepackage{graphicx}			% allows us to import images
+\usepackage[scale=1.42]{beamerposter}
+\usepackage{graphicx}
 \usepackage[french]{babel}
 \usepackage{microtype}
 \usepackage{default}
 
-
-%-----------------------------------------------------------
-% Custom commands that I use frequently
-%-----------------------------------------------------------
-
-\newcommand{\mainfont}[1]{
-	\sffamily{
-	#1
-	}
-	}
 
 %-----------------------------------------------------------
 % Define the column width and poster size
@@ -63,13 +50,10 @@
 % Define colours (see beamerthemeconfposter.sty to change these colour definitions)
 %-----------------------------------------------------------
 
-\setbeamercolor{block title}{fg=ngreen,bg=white}
-\setbeamercolor{block body}{fg=black,bg=white}
-\setbeamercolor{block alerted title}{fg=white,bg=dblue!70}
-\setbeamercolor{block alerted body}{fg=black,bg=dblue!10}
-%\setmainfont{Fira Sans}
-%\setsansfont{Fira Sans}
-%\setsansfont{Fira Code}
+\setbeamercolor{block title}{fg=DarkGray,bg=white}
+\setbeamercolor{block body}{fg=DarkGray,bg=white}
+\setbeamercolor{block alerted title}{fg=DarkGray,bg=LightGray}
+\setbeamercolor{block alerted body}{fg=DarkGray,bg=LightGray}
 %-----------------------------------------------------------
 % Name and authors of poster/paper/research
 %-----------------------------------------------------------
@@ -78,51 +62,64 @@
 \author{Jean-Michaël Celerier}
 \institute{Laboratoire Bordelais de Recherche en Informatique, Blue Yeti}
 
-%-----------------------------------------------------------
-% Start the poster itself
-%-----------------------------------------------------------
-% The \rmfamily command is used frequently throughout the poster to force a serif font to be used for the body text
-% Serif font is better for small text, sans-serif font is better for headers (for readability reasons)
-%-----------------------------------------------------------
-
 \begin{document}
 \begin{frame}[t]
-  \begin{columns}[t]												% the [t] option aligns the column's content at the top
+   \begin{columns}[t]
+     \begin{column}{\sepwid}\end{column}
+     \begin{column}{\onecolwid}
+      \begin{block}{Problématique}
+          \begin{columns}[t]
+              \begin{column}{\onecolwid}\justify
+                  Comment concevoir un logiciel amené à être utilisé par des artistes tout en servant de plate-forme de recherche pour des technologies multimédia?
+                \end{column}
+            \end{columns}        
+      \end{block}
+     \end{column}
+     \begin{column}{\sepwid}\end{column}
+     \begin{column}{\twocolwid}
+         \begin{block}{Méthode}             
+             \begin{columns}[t]	                 
+                 \begin{column}{\onecolwid}\justify
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                     \end{column}
+                     \begin{column}{\onecolwid}\justify
+                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                        \end{column}
+                \end{columns}                 
+            \end{block}
+      \end{column}
+      \begin{column}{\sepwid}\end{column}
+      \begin{column}{\onecolwid}
+          \begin{block}{Résultats}
+              posay
+            \end{block}
+        \end{column}         
+   \begin{column}{\sepwid}\end{column}		
+  \end{columns}
+  \begin{columns}[t]	
+      											% the [t] option aligns the column's content at the top
     \begin{column}{\sepwid}\end{column}			% empty spacer column
     \begin{column}{\onecolwid}
-      \begin{alertblock}{Problématique}
-        \mainfont{}
-      \end{alertblock}
       \vskip2ex
-      \begin{block}{Partitions interactives}
-        \mainfont{État de l'art, domaine du problème}
-      \end{block}
+       \input{partitions}
       \vskip2ex
-      \begin{block}{Modèles pour logiciels auteurs}
-        \mainfont{}
-        % penser à citer bouquin que j'avais montré à simon sur CSP
-        MVP, MVVM, ECS, voir aussi modèle de Michel Baudouin-Lafont sur approche document interactive.
-      \end{block}
+      \input{modeles}
     \end{column}
 
     \begin{column}{\sepwid}\end{column}
     \begin{column}{\twocolwid}
       \begin{columns}[t,totalwidth=\twocolwid]
         \begin{column}{\onecolwid}\vspace{-.69in}
-          \begin{block}{Entités}
-            \mainfont{Identification (avec cache), chemins complets type-safe (avec cache), hiérarchie, document}
-          \end{block}
-          \begin{block}{ECS hiérarchique}
-          	\mainfont{Création automatique, gestion des ressources, sauvegarde, définition de l'E, du C, du S dans notre cas}
-          \end{block}
+            \vskip2ex
+            \input{entites}
+            \vskip2ex
+            \input{ecs}
         \end{column}
         \begin{column}{\onecolwid}\vspace{-.69in}
-        	\begin{block}{Génération de boilerplate avec CMake}
-        		\mainfont{Intégration au système de plug-ins, merging des composants, factories en temps linéaire et allouées statiquement pour build statique vs quadratique m fois n pour build dynamique}
-        	\end{block}
-        	\begin{block}{Édition en temps réel avec rollback}
-        		\mainfont{}
-        	\end{block}
+            \vskip2ex
+            \input{cmake}
+            \vskip2ex
+            \input{edition}
         \end{column}
       \end{columns}
       \vskip2.5ex
@@ -133,24 +130,11 @@
   \begin{column}{\sepwid}\end{column}			% empty spacer column
   \begin{column}{\onecolwid}
     \begin{block}{Résultats}
-      \mainfont{}
     \end{block}
     \vskip2ex
-    \begin{block}{Informations complémentaires}
-    	% Site web
-    	% Article
-      \small{\mainfont{Articles:
-      \begin{itemize}
-        \item -ossia
-        \item -iscore
-      \end{itemize}
-      \vspace{0.1in}\noindent i-score peut être téléchargé sur
-      \begin{itemize}
-        \item www.i-score.org
-      \end{itemize}}}
-    \end{block}
+    \input{informations}
     \vskip2ex
-    \begin{block}{References}
+    \begin{block}{Références}
     \end{block}
     \vskip2ex
   \end{column}

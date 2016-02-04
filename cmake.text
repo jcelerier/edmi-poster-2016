@@ -1,0 +1,4 @@
+
+        	\begin{block}{Génération de boilerplate avec CMake}
+        		\mainfont{Intégration au système de plug-ins, merging des composants, factories en temps linéaire et allouées statiquement pour build statique vs quadratique m fois n pour build dynamique}
+        	\end{block}
