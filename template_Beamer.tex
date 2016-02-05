@@ -4,11 +4,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[final]{beamer}
-\usepackage[scale=1.42]{beamerposter}
+\usepackage[scale=1.12]{beamerposter}
 \usepackage{graphicx}
+\usepackage{pstricks}
+\usepackage{tikz}
 \usepackage[french]{babel}
 \usepackage{microtype}
 \usepackage{default}
+\usepackage{listings}
+
 
 
 %-----------------------------------------------------------
@@ -63,7 +67,7 @@
 \institute{Laboratoire Bordelais de Recherche en Informatique, Blue Yeti}
 
 \begin{document}
-\begin{frame}[t]
+\begin{frame}[fragile,t]
    \begin{columns}[t]
      \begin{column}{\sepwid}\end{column}
      \begin{column}{\onecolwid}
@@ -91,11 +95,18 @@
       \begin{column}{\sepwid}\end{column}
       \begin{column}{\onecolwid}
           \begin{block}{Résultats}
-              posay
+          	\begin{columns}[t]
+          		\begin{column}{\onecolwid}\justify
+          			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          		\end{column}
+          	\end{columns}        
             \end{block}
         \end{column}         
    \begin{column}{\sepwid}\end{column}		
   \end{columns}
+  \vspace{0.5in}
+  \hspace*{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+  \vspace{0.1in}
   \begin{columns}[t]	
       											% the [t] option aligns the column's content at the top
     \begin{column}{\sepwid}\end{column}			% empty spacer column
