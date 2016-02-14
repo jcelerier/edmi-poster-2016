@@ -159,10 +159,9 @@
 
 % set the fonts
 \setbeamerfont{section in head/foot}{series=\bfseries}
-\setbeamerfont{block title}{series=\bfseries}
-\setbeamerfont{block alerted title}{series=\bfseries}
-\setbeamerfont{frametitle}{series=\bfseries}
-\setbeamerfont{frametitle}{size=\Large}
+\setbeamerfont*{block title}{size=\Large}
+\setbeamerfont*{block alerted title}{size=\Huge,series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries,size=\Huge}
 \setbeamerfont{block body}{series=\rmfamily}
 
 % set some beamer theme options
@@ -194,16 +193,12 @@
    \begin{column}{\linewidth}
     \vskip1cm
     \centering
-    \usebeamercolor{title in headline}{\fontspec{Titillium}\color{DarkGray}\Huge{\textsc{\inserttitle}}\\[0.5ex]}
+    \usebeamercolor{title in headline}{\fontspec{Titillium Web}\color{DarkGray}\Huge{\textsc{\inserttitle}}\\[0.5ex]}
     \usebeamercolor{author in headline}{\color{DarkGray100}\Large{\insertauthor}\\[1ex]}
     \usebeamercolor{institute in headline}{\color{DarkGray100}\large{\insertinstitute}\\[1ex]}
     \vskip1cm
    \end{column}
-   \vspace{1cm}
   \end{columns}
- \vspace{0.5in}
- \hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
- \vspace{0.1in}
 }
 
 % Block definition
@@ -211,8 +206,8 @@
 {
   \par\vskip\medskipamount
   \begin{beamercolorbox}[colsep*=0ex,dp={2ex},center]{block title}
-    \vskip-0.25cm
-    \usebeamerfont{block title}\large\insertblocktitle
+    \vskip-1cm 
+    \usebeamerfont{block title}\insertblocktitle
     %\begin{flushleft}
     %\vskip-1cm
     %\begin{tikzpicture}[remember picture,overlay]

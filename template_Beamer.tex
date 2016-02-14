@@ -67,49 +67,13 @@
 \institute{Laboratoire Bordelais de Recherche en Informatique, Blue Yeti}
 
 \begin{document}
-\begin{frame}[fragile,t]
-   \begin{columns}[t]
-     \begin{column}{\sepwid}\end{column}
-     \begin{column}{\onecolwid}
-      \begin{block}{Problématique}
-          \begin{columns}[t]
-              \begin{column}{\onecolwid}\justify
-                  Comment concevoir un logiciel amené à être utilisé par des artistes tout en servant de plate-forme de recherche pour des technologies multimédia?
-                \end{column}
-            \end{columns}        
-      \end{block}
-     \end{column}
-     \begin{column}{\sepwid}\end{column}
-     \begin{column}{\twocolwid}
-         \begin{block}{Méthode}             
-             \begin{columns}[t]	                 
-                 \begin{column}{\onecolwid}\justify
-                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                     \end{column}
-                     \begin{column}{\onecolwid}\justify
-                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-                        \end{column}
-                \end{columns}                 
-            \end{block}
-      \end{column}
-      \begin{column}{\sepwid}\end{column}
-      \begin{column}{\onecolwid}
-          \begin{block}{Résultats}
-          	\begin{columns}[t]
-          		\begin{column}{\onecolwid}\justify
-          			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          		\end{column}
-          	\end{columns}        
-            \end{block}
-        \end{column}         
-   \begin{column}{\sepwid}\end{column}		
-  \end{columns}
-  \vspace{0.5in}
-  \hspace*{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
-  \vspace{0.1in}
-  \begin{columns}[t]	
-      											% the [t] option aligns the column's content at the top
-    \begin{column}{\sepwid}\end{column}			% empty spacer column
+\begin{frame}[fragile,t]    
+   \input{header} 
+  \vspace{0.5in}  
+  \input{header-columns}
+  \vspace{-1ex}  
+  \begin{columns}[t]
+    \begin{column}{\sepwid}\end{column}
     \begin{column}{\onecolwid}
       \vskip2ex
        \input{partitions}
@@ -120,13 +84,13 @@
     \begin{column}{\sepwid}\end{column}
     \begin{column}{\twocolwid}
       \begin{columns}[t,totalwidth=\twocolwid]
-        \begin{column}{\onecolwid}\vspace{-.69in}
+        \begin{column}{\onecolwid}\vspace{-.67in}
             \vskip2ex
             \input{entites}
             \vskip2ex
             \input{ecs}
         \end{column}
-        \begin{column}{\onecolwid}\vspace{-.69in}
+        \begin{column}{\onecolwid}\vspace{-.67in}
             \vskip2ex
             \input{cmake}
             \vskip2ex
@@ -138,10 +102,8 @@
       	
       \end{alertblock}
   \end{column}
-  \begin{column}{\sepwid}\end{column}			% empty spacer column
+  \begin{column}{\sepwid}\end{column}
   \begin{column}{\onecolwid}
-    \begin{block}{Résultats}
-    \end{block}
     \vskip2ex
     \input{informations}
     \vskip2ex
