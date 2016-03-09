@@ -1,7 +1,14 @@
-\begin{block}{Entités}
-Adapté pour hiérarchie fixée dans le modèle : tout ne se compose pas avec tout.
-Propriétés : identification avec cache dans un document, ainsi qu'à un niveau de hiérarchie donnée : nécessaire pour gestion undo - redo et identification réseau.
-Typage fort des identifiants et des chemins.
+\begin{block}{Implémentation}
+Système d'entités adapté pour \textbf{hiérarchie fixée} dans le modèle : tout ne se compose pas avec tout.
+Identification unique fortement typée avec cache~: 
+\begin{itemize}
+    \item Dans un document par chemins : nécessaire pour gestion undo - redo et identification sur réseau.
+    Pattern Commande réparti pour \textbf{édition multi-utilisateurs}.
+    \item À un niveau de hiérarchie donnée : performance pour itération.
+   \end{itemize}
 
-** parler synchro audio et réseau, ainsi que gestion physique dans processus spatial **
+Création de composants fortement ou faiblement typés selon le besoin, et associés à un élément de modèle.
+
+Contrairement à moteurs de jeu, pas de synchro des tick rate car tous les systèmes sont séparés ; certains systèmes peuvent fonctionner sur le même thread ou sur des threads différents. 
+Les systèmes peuvent communiquer entre eux.
 \end{block}

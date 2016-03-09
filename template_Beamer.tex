@@ -12,7 +12,9 @@
 \usepackage{microtype}
 \usepackage{default}
 \usepackage{listings}
-
+\usepackage[backend=biber]{biblatex}
+\addbibresource{document.bib}
+\renewcommand*{\bibfont}{\footnotesize}
 
 
 %-----------------------------------------------------------
@@ -62,7 +64,7 @@
 % Name and authors of poster/paper/research
 %-----------------------------------------------------------
 
-\title{Techniques vidéo-ludiques pour la conception d'un logiciel auteur multimédia}
+\title{Techniques vidéo-ludiques pour logiciel auteur multimédia}
 \author{Jean-Michaël Celerier}
 \institute{Laboratoire Bordelais de Recherche en Informatique, Blue Yeti}
 
@@ -87,27 +89,30 @@
         \begin{column}{\onecolwid}\vspace{-.67in}
             \vskip2ex
             \input{entites}
-            \vskip2ex
-            \input{ecs}
         \end{column}
         \begin{column}{\onecolwid}\vspace{-.67in}
-            \vskip2ex
-            \input{cmake}
             \vskip2ex
             \input{edition}
         \end{column}
       \end{columns}
       \vskip2.5ex
-      \begin{alertblock}{i-score}
-      	
-      \end{alertblock}
+      \begin{block}{}
+          \begin{figure}
+              \centering
+              \includegraphics[width=\textwidth]{images/iscore.png}
+              \caption{Un scénario d'exemple i-score}
+            \end{figure}
+      \end{block}
   \end{column}
   \begin{column}{\sepwid}\end{column}
   \begin{column}{\onecolwid}
     \vskip2ex
+    \input{suite}
+    \vskip2ex
     \input{informations}
     \vskip2ex
     \begin{block}{Références}
+        \footnotesize\printbibliography
     \end{block}
     \vskip2ex
   \end{column}
