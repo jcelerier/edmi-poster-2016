@@ -1,0 +1,43 @@
+\setbeamerfont*{block title}{size=\Large,series=\bfseries}
+\begin{columns}[t]
+   \begin{column}{\sepwid}\end{column}
+     \begin{column}{\onecolwid}
+      \begin{block}{Problématique}
+          \begin{columns}[t]
+              \begin{column}{\onecolwid}\justify
+                  Conception d'un logiciel d'écriture temporelle amené à être utilisé en production par des artistes tout en servant de plate-forme de recherche extensible pour des technologies multimédia.
+                \end{column}
+            \end{columns}        
+      \end{block}
+     \end{column}
+     \begin{column}{\sepwid}\end{column}
+     \begin{column}{\twocolwid}
+         \begin{block}{Méthode}             
+             \begin{columns}[t]	                 
+                 \begin{column}{\onecolwid}\justify
+                     Conception en entité-composant-système avec hiérarchies symétriques d'entités et de composants. 
+                     Plusieurs moteurs opèrent en parallèle, avec une conception modulaire pour étendre le modèle.
+                     \end{column}
+                     \begin{column}{\onecolwid}\justify
+                         Création d'entités sémantiques fortes par héritage, puis d'extensions faibles par composition.
+                         Hiérarchie : création automatique de composants enfants à la création de nouvelles entités. 
+                        \end{column}
+                \end{columns}                 
+            \end{block}
+      \end{column}
+      \begin{column}{\sepwid}\end{column}
+      \begin{column}{\onecolwid}
+          \begin{block}{Résultats}
+          	\begin{columns}[t]
+          		\begin{column}{\onecolwid}\justify
+                      Plusieurs moteurs sont implémentés ainsi : moteur d'exécution, 
+                      lecteur audio, réflection du système via une API réseau, interface graphique, 
+                      moteur de gestion de contraintes à l'édition.
+          		\end{column}
+          	\end{columns}        
+            \end{block}
+        \end{column}         
+   \begin{column}{\sepwid}\end{column}		
+\end{columns}
+
+\setbeamerfont*{block title}{size=\Large}
